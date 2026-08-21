@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caik Lima — Engenheiro de Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__brand">caik<span class="nav__brand-dot">.</span>dev</a>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#home">home</a>
+        <a href="#sobre">sobre</a>
+        <a href="#projetos">projetos</a>
+        <a href="#contato">contato</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <span class="theme-toggle__icon" id="themeIcon">◐</span>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO / HOME ===== -->
+  <section class="hero" id="home">
+    <div class="hero__inner">
+      <p class="diff-line diff-line--meta">$ git log --author="caik" -1</p>
+
+      <h1 class="hero__title">
+        <span class="diff-line diff-line--add">+ Caik Lima</span><br>
+        <span class="diff-line diff-line--add">+ Engenheiro de Software</span><br>
+        <span class="diff-line diff-line--del">− em construção, sempre</span>
+      </h1>
+
+      <p class="hero__bio">
+        Estudante de <strong>Ciência da Computação</strong>, apaixonado por resolver bugs e
+        criar experiências de software fluidas. Atuo com desenvolvimento web e software,
+        sempre <strong>commitando algo novo</strong>.
+      </p>
+
+      <div class="hero__meta">
+        <span class="tag">área: <strong>desenvolvimento web &amp; software</strong></span>
+        <span class="tag">aprendendo: <strong>Vue.js</strong></span>
+      </div>
+
+      <div class="hero__actions">
+        <a href="#projetos" class="btn btn--primary">ver projetos</a>
+        <a href="#contato" class="btn btn--ghost">falar comigo</a>
+      </div>
+    </div>
+
+    <div class="hero__console" aria-hidden="true">
+      <div class="console__bar">
+        <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+        <span class="console__title">status.log</span>
+      </div>
+      <pre class="console__body" id="consoleBody"></pre>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE ===== -->
+  <section class="section" id="sobre">
+    <div class="section__inner">
+      <p class="eyebrow">## sobre</p>
+      <h2 class="section__title">git blame</h2>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>interesses</h3>
+          <ul class="diff-list">
+            <li class="diff-line diff-line--add">+ design e tecnologia</li>
+            <li class="diff-line diff-line--add">+ desenvolvimento full-stack</li>
+            <li class="diff-line diff-line--add">+ segurança de aplicações</li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <h3>stack em uso</h3>
+          <div class="skill-tags" id="skillTags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Vue.js</span>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h3>objetivos</h3>
+          <ul class="diff-list">
+            <li class="diff-line diff-line--add">+ concluir Ciência da Computação</li>
+            <li class="diff-line diff-line--add">+ avançar em desenvolvimento full-stack</li>
+            <li class="diff-line diff-line--del">− procrastinar deploys</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJETOS ===== -->
+  <section class="section section--alt" id="projetos">
+    <div class="section__inner">
+      <p class="eyebrow">## projetos</p>
+      <h2 class="section__title">changelog</h2>
+
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn is-active" data-filter="all">todos</button>
+        <button class="filter-btn" data-filter="backend">backend</button>
+        <button class="filter-btn" data-filter="seguranca">segurança</button>
+        <button class="filter-btn" data-filter="desktop">desktop</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <article class="project-card" data-category="backend">
+          <div class="project-card__version">v1.0.0</div>
+          <h3>EmpresaApi</h3>
+          <p>Uma Minimal API que armazena informações de empresas, seus endereços e funcionários.</p>
+          <div class="project-card__tags">
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">.NET</span>
+          </div>
+          <div class="project-card__links">
+            <a href="https://github.com/Caik0/EmpresaApi" target="_blank" rel="noopener" class="btn btn--small">código</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="seguranca">
+          <div class="project-card__version">v1.0.0</div>
+          <h3>sql-injection-demo</h3>
+          <p>Projeto de demonstração de SQL Injection em Node.js com SQLite, mostrando na prática como uma aplicação mal construída pode ser explorada por um invasor.</p>
+          <div class="project-card__tags">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">SQLite</span>
+          </div>
+          <div class="project-card__links">
+            <a href="https://github.com/Caik0/sql-injection-demo" target="_blank" rel="noopener" class="btn btn--small">código</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="desktop">
+          <div class="project-card__version">v1.0.0</div>
+          <h3>Pomodle</h3>
+          <p>Aplicativo desktop de Pomodoro construído em Python, com interface baseada em CustomTkinter.</p>
+          <div class="project-card__tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">CustomTkinter</span>
+          </div>
+          <div class="project-card__links">
+            <a href="https://github.com/Caik0/Pomodle" target="_blank" rel="noopener" class="btn btn--small">código</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section class="section" id="contato">
+    <div class="section__inner">
+      <p class="eyebrow">## contato</p>
+      <h2 class="section__title">pull request</h2>
+      <p class="section__lead">Abra uma "PR" comigo — respondo o mais rápido possível.</p>
+
+      <div class="contact-grid">
+        <ul class="contact-list">
+          <li>
+            <span class="contact-list__label">github</span>
+            <a href="https://github.com/Caik0" target="_blank" rel="noopener">github.com/Caik0</a>
+          </li>
+          <li>
+            <span class="contact-list__label">linkedin</span>
+            <a href="https://www.linkedin.com/in/caik-lima-giordane-626977271" target="_blank" rel="noopener">linkedin.com/in/caik-lima-giordane</a>
+          </li>
+          <li>
+            <span class="contact-list__label">email</span>
+            <a href="mailto:caik0dev@gmail.com">caik0dev@gmail.com</a>
+          </li>
+        </ul>
+
+        <form class="contact-form" id="contactForm">
+          <label for="name">nome</label>
+          <input type="text" id="name" name="name" required placeholder="seu nome">
+
+          <label for="email">email</label>
+          <input type="email" id="email" name="email" required placeholder="seu@email.com">
+
+          <label for="message">mensagem</label>
+          <textarea id="message" name="message" rows="4" required placeholder="escreva sua mensagem..."></textarea>
+
+          <button type="submit" class="btn btn--primary">enviar commit</button>
+          <p class="contact-form__status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Caik Lima — construído com HTML, CSS, JS e apoio de IA generativa.</p>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
